@@ -1,6 +1,7 @@
 
 import dotenv from "dotenv";
 import connectDB from "./db/index.js";
+import express from 'express';
 
 dotenv.config(
     {
@@ -8,6 +9,7 @@ dotenv.config(
     }
 );
 
+const app = express()
 
 connectDB()
 .then(() => {
@@ -16,6 +18,6 @@ connectDB()
     })
 })
 .catch((error) => {
-    console.log(`Database connection Failed : ${error} `)
+    console.log(`Database Connection Failed : ${error} `)
 })
 
